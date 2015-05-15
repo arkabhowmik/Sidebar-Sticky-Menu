@@ -1,11 +1,13 @@
+@charset "UTF-8";
 @import url(http://fonts.googleapis.com/css?family=Oxygen+Mono);
 
 /* Please Keep this font import at the very top of any CSS file */
-@charset "UTF-8";
+@import "reset";
 
 /* Starter CSS for Flyout Menu */
 
 #cssmenu {
+    height: 100vh;
     padding: 0;
     margin: 0;
     border: 0;
@@ -194,6 +196,53 @@
             }
         }
     }
+}
+
+@media screen and (max-width: 441px) {
+    body{
+        background: #e7e7e7;
+    }
+    #cssmenu{
+        ul {
+            ul {
+                float: none;
+                border: 0;
+                border-radius: 0;
+                max-height: 0;
+                margin-top: 0;
+                position: relative;
+                left: 0;
+                top: 0;
+                overflow: hidden;
+                -webkit-transition: all 0.8s ease-in;
+                -moz-transition: all 0.8s ease-in;
+                -ms-transition: all 0.8s ease-in;
+                -o-transition: all 0.8s ease-in;
+                transition: all 0.8s ease-in;
+                li{
+                    border: 0;
+                    ul{
+                        top: 0;
+                    }
+                }
+            }
+            li:hover > ul {
+                max-height: 100vh;
+            }
+        }
+
+        &.align-right{
+            ul {
+                ul {
+                    position: relative;
+                    left: auto;
+                    right: 0;
+                }
+            }
+        }
+    }
+
+
 }
 
 /* Custom CSS Styles */
