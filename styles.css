@@ -263,7 +263,21 @@ a:hover, a:focus, a:active {
   border-radius: 5px; }
 
 /* Starter CSS for Flyout Menu */
+body, html {
+  overflow-x: hidden; }
+
 #cssmenu {
+  opacity: 1;
+  -moz-transform: translate(0, 0);
+  -webkit-transform: translate(0, 0);
+  -o-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  transform: translate(0, 0);
+  -webkit-transition: opacity 0.5s, transform 1s ease-out;
+  -moz-transition: opacity 0.5s, transform 1s ease-out;
+  -ms-transition: opacity 0.5s, transform 1s ease-out;
+  -o-transition: opacity 0.5s, transform 1s ease-out;
+  transition: opacity 0.5s, transform 1s ease-out;
   height: 100vh;
   padding: 0;
   margin: 0;
@@ -296,7 +310,13 @@ a:hover, a:focus, a:active {
         z-index: 599;
         cursor: default; }
     #cssmenu ul ul {
+      -webkit-transition: all 0.2s ease-in;
+      -moz-transition: all 0.2s ease-in;
+      -ms-transition: all 0.2s ease-in;
+      -o-transition: all 0.2s ease-in;
+      transition: all 0.2s ease-in;
       visibility: hidden;
+      opacity: 0;
       position: absolute;
       top: 100%;
       left: 0px;
@@ -308,6 +328,7 @@ a:hover, a:focus, a:active {
         top: -2px;
         right: 0; }
     #cssmenu ul li:hover > ul {
+      opacity: 1;
       visibility: visible; }
     #cssmenu ul ul {
       top: 1px;
@@ -405,8 +426,21 @@ a:hover, a:focus, a:active {
         -webkit-border-radius: 0 0 0 3px;
         -moz-border-radius: 0 0 0 3px;
         border-radius: 0 0 0 3px; }
+  #cssmenu.menu-toggle {
+    opacity: 0;
+    -moz-transform: translate(-1200px, 0);
+    -webkit-transform: translate(-1200px, 0);
+    -o-transform: translate(-1200px, 0);
+    -ms-transform: translate(-1200px, 0);
+    transform: translate(-1200px, 0); }
+    #cssmenu.menu-toggle.align-right {
+      -moz-transform: translate(1200px, 0);
+      -webkit-transform: translate(1200px, 0);
+      -o-transform: translate(1200px, 0);
+      -ms-transform: translate(1200px, 0);
+      transform: translate(1200px, 0); }
 
-@media screen and (max-width: 441px) {
+@media screen and (max-width: 771px) {
   body {
     background: #e7e7e7; }
   #cssmenu ul ul {
@@ -418,12 +452,7 @@ a:hover, a:focus, a:active {
     position: relative;
     left: 0;
     top: 0;
-    overflow: hidden;
-    -webkit-transition: all 0.8s ease-in;
-    -moz-transition: all 0.8s ease-in;
-    -ms-transition: all 0.8s ease-in;
-    -o-transition: all 0.8s ease-in;
-    transition: all 0.8s ease-in; }
+    overflow: hidden; }
     #cssmenu ul ul li {
       border: 0; }
       #cssmenu ul ul li ul {
@@ -434,6 +463,18 @@ a:hover, a:focus, a:active {
     position: relative;
     left: auto;
     right: 0; } }
+
+.menu-toggler {
+  cursor: pointer;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  padding: 40px;
+  background: orange;
+  font-weight: bold;
+  color: #fff;
+  letter-spacing: 1px;
+  font-size: 20px; }
 
 /* Custom CSS Styles */
 /*# sourceMappingURL=styles.css.map */
